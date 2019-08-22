@@ -556,6 +556,4 @@ app.post("/delete", urlencoder, (req, res)=>{
     })
 })
 
-app.listen(3000, function(){                  // read from this port
-    console.log("Now listening at port 3000!");
-})
+app.listen(process.env.PORT || 3000)
