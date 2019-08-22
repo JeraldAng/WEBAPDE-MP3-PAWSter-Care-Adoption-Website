@@ -49,18 +49,13 @@
 <body>
 <!-- Navigation -->
   {{> navbar}}
-    <script>HighlightTab("profile")</script><br>
+    <script>HighlightTab("profile")</script><br><br><br><br>
+    
+    <h1 class="text-center" >We would love to hear your feedback!</h1>
     
 <div class="container contact">
 	<div class="row">
-		<div class="col-md-3">
-			<div class="contact-info">
-				<img src="../img/dog.png" alt="image"/>
-				<h2>Contact Us</h2>
-				<h4>We would love to hear from you !</h4>
-			</div>
-		</div>
-		<div class="col-md-9">
+		<div class="col-md-7">
 			<form action="feedbackform" id = "feedback_form" method="post">
             <div class="contact-form">
 				<div class="form-group">
@@ -95,9 +90,14 @@
 			</div>
         </form>
 	</div>
+        <div class="col-md-5">
+			<div class="contact-info">
+			</div>
+		</div>
+        
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br>
+
 {{> footer}}
 </body>
 </html>

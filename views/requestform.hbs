@@ -59,6 +59,7 @@
     
 <!-- custom CSS -->
 <link href="../css/PAWSter%20Care.css" rel="stylesheet">
+<link href="../css/requestform.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/alertify.css"/>
     
 <!-- custom js + slider -->
@@ -74,8 +75,9 @@
     
 <div class="container">
     <br>
-	<div class="col-lg-12 well"  id="source-html">
-        <h1 class="well">Request for Adoption Form</h1>
+	<div class="col-lg-12 paper-bg" id="source-html">
+        <h1 class="well text-center">Request for Adoption Form</h1><br>
+        <img class="clip" src="../img/clip.png"/>
 	<div class="row">
 				<form method="post" action="request">
 					<div class="col-sm-12">
@@ -137,15 +139,19 @@
                             </div>
                              <div class="col-sm-4 form-group">
                                 <label>Email Address </label>
-                                <input type="text" placeholder="Enter Email Address Here.." class="form-control" name="reqemail" value="{{email}}" required oninvalid="alert('You must fill out the email address!')">
+                                <input type="text" placeholder="Enter Email Address Here.." class="form-control" name="reqemail" value="{{email}}" required oninvalid="alert('You must fill out the email address!')" disabled>
                             </div>	
 						</div><br><hr>
+                        <div class="chosen_dog">
+                            <img style="height: 300px; width: 500px" src= "../uploads/{{dog.image}}"/>
+                        </div>
+                            <br><br>
                         <div class="row">
-                            <div class="col-sm-2 form-group">
+                            <div class="col-sm-4 form-group">
 								<label>Name of Dog </label>
-								<input type="text" placeholder="Dog Name.." class="form-control" value="{{dog.name}}" name="reqdog" required oninvalid="alert('You must fill out the dog's name!')">
+								<input type="text" placeholder="Dog Name.." class="form-control" value="{{dog.name}}" name="reqdog" required oninvalid="alert('You must fill out the dog's name!')" disabled>
 							</div>
-                            <div class="col-sm-2 form-group">
+                            <div class="col-sm-3 form-group">
 								<label>Experience with Dogs </label>
 								<select type="text" placeholder="Choose experience type.." class="form-control" name="reqexp" required oninvalid="alert('You must fill out experience type!')">
                                       <option value="none">None</option>
@@ -154,7 +160,7 @@
                                       <option value="experienced">Experienced</option>
                                 </select>
 							</div>
-                            <div class="col-sm-7 form-group">
+                            <div class="col-sm-12 form-group">
 								<label>Expectation or Preferences </label>
 								<input type="text" placeholder="I expect.. / I prefer.." class="form-control">
 							</div>
@@ -168,20 +174,7 @@
 					</div>
                         <label>&nbsp;&nbsp;Terms and Conditions</label>
                         <p style="padding-left: 10px">
-                            By sending this electronically, I acknowledge that I have completely read this form and comprehend it fully.<br><br>
-
-                            I understand that applying does not ensure approval and that untruthful answers or failure to comply with the requirements of this application can result in the forfeiture of any PAWSter Care animal fostered by me.<br><br>
-
-                            I certify that the above information is correct, and I understand that the information will be verified.<br><br>
-
-                            I understand that by submitting this form electronically, I agree to release and covenant to hold harmless PAWSter Care and it's members from any claims, damages, costs, or actions incurred because of the care or actions of the foster dog.<br><br>
-
-                            I accept full responsibility for the dog(s) actions at all times, and release PAWSter Care from any liabilities or damages that may be incurred because of fostering such dog(s).<br><br>
-
-                            I agree to have PAWSter Care complete reference call checks and conduct a home visit inspection to be able to approve my foster application.<br><br>
-
-                            I agree that if I'm unable to foster the dog(s) anymore that I will return the dog(s) to PAWSter Care and try to give PAWSter Care a 2 week period to try and find another suitable foster for the dog(s).
-                            </p>
+                            By sending this electronically, I agree to the terms and conditions listed under <a href="protocols">PROTOCOLS</a>.<br><br>
                     &nbsp;
                     <input type="submit" class="btn btn-lg btn-info" value="Submit Request">
                     &nbsp;&nbsp;&nbsp;

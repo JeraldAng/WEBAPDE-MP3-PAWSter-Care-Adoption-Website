@@ -1,0 +1,32 @@
+.approved{
+    background-color: #addbad;
+}
+
+.approved:hover{
+    background-color: #BDE2BD;
+}
+
+.rejected{
+    background-color: #ECA9A7;
+}
+
+.rejected:hover{
+    background-color: #EFBAB8;
+}
+
+.pending{
+    background-color: #F9F9F9;
+}
+
+.pending:hover{
+    background-color: rgba(255,255,255);
+}
+
+.request-header{
+    background-color: rgb(192,192,192);
+}
+
+.reqicon{
+    height: 60px;
+    width: 50px;
+}

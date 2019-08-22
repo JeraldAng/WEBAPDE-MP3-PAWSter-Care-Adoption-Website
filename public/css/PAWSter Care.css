@@ -191,3 +191,17 @@ label.col-md-3.control-label{
     max-width: 80%;
     padding-left: 0px;
 }
+
+.btn.btn-primary.btn-danger.delete.fa.fa-check{
+    margin-left: 20px;
+    height: 35px;
+}
+
+.btn.btn-primary.btn-danger.delete.fa.fa-check:hover{
+    background-color: red;
+    color: #ffffff;
+    transition: .2s ease-out; 
+    transition-delay: 0.1s;
+    color: white;
+}
+

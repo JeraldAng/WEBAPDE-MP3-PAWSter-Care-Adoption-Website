@@ -10,6 +10,7 @@ const {Dog} = require("./models/dog.js")
 const {Feedback} = require("./models/feedback.js")
 const {Request} = require("./models/request.js")
 var upload = multer({dest: './public/uploads/'})
+var CryptoJS = require('crypto-js')
 
 
 const app = express()
@@ -330,7 +331,7 @@ app.post("/login", urlencoder, (req, res)=>{
     var password = req.body.pass 
          
     User.findOne({
-         username, password
+         username, password: CryptoJS.MD5(password).toString()
          }, (err, doc)=>{
             if(err){
                 res.send(err)
@@ -355,7 +356,7 @@ app.post("/signup", urlencoder, (req, res)=>{
     var email = req.body.email
          
     let user = new User({
-         username, password, email
+         username, password: CryptoJS.MD5(password).toString(), email
     })
 
     user.save().then((doc)=>{
@@ -376,7 +377,7 @@ app.post("/edit_profile", urlencoder, (req, res)=>{
     }, {                                       // new info that you want to add
         username: req.body.uname,
         email: req.body.email,
-        password: req.body.pass
+        password: CryptoJS.MD5(req.body.pass).toString()
     }, (err, doc)=>{
        if (err){
            res.send(err)

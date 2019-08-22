@@ -62,6 +62,16 @@ $("#search-form").submit(function(e) {
 	});
 });
 
+$("#reset-filter").click(function(){
+     $(".filter-breed").val("")                      
+     $(".filter-gender").val("")                      
+     $(".filter-energy_level").val("")                      
+     $(".filter-ease_of_training").val("")  
+     $("#search-box").val("")  
+    
+     $(".filter").change();
+})
+
 $(document).ready(function() {
     
 	var filterName = $(".filter").data("filter"),

@@ -41,28 +41,31 @@
 <body>
  {{> navbar}}
     <script>HighlightTab("meet_the_dogs")</script>
-    <br><br><br><br>
     
 <!-- Cards -->
-
-    <div>
-    <div id="search" class="filter-category mt-2">
-		<form id="search-form" action="" method="POST" enctype="multipart/form-data">
-			<div class="form-group col-5 mx-auto">
-				<input class="form-control" type="text" placeholder="Search" />
-			</div>
-			<div class="form-group col-5 mx-auto">
-				<button type="submit" class="btn btn-block btn-primary">Search</button>
-			</div>
-		</form>
-	</div>
+    <div class="filter-container">
+        <br><br><br><br>
+        <h1 class="text-center" >Search our PAWSter Dogs!</h1><br>
+        <div id="search" class="filter-category mt-2">
+        <form id="search-form" action="" method="POST" enctype="multipart/form-data">
+        <div class="input-group col-6 mx-auto">
+            <input id="search-box" type="text" class="form-control" placeholder="Search for a name or a breed!"/>
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-block btn-primary">Search!</button>
+        </span>
+        <span class="input-group-btn ml-5">
+            <button id = "reset-filter" type="button" class="btn btn-block btn-secondary">Clear Filter and Search</button>
+        </span>    
+        </div>
+            </form>
+        </div><br>
         
     <!-- Filter -->
         <div class="filter-category mx-auto" id="filter">
             <form>
-              <div class="row">
-                <div class="form-group col-4 ml-auto">
-                    <label>Select Breed</label>
+              <div id="filter-row" class="row">
+                <div class="form-group col-md-3 ml-auto">
+                    <strong>Select Breed</strong>
                     <select data-filter="breed" class="filter-breed filter form-control">
                         <option value="">Show All</option>
                         <option value="Beagle">Beagle</option>
@@ -73,18 +76,16 @@
                         <option value="Schnauzer">Schnauzer</option>
                     </select>
                 </div>
-                <div class="form-group col-4 mr-auto">
-                    <label>Select Gender</label>
+                <div class="form-group col-md-3 ml-auto">
+                    <strong>Select Gender</strong>
                     <select data-filter="gender" class="filter-gender filter form-control">
                         <option value="">Show All</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </select>
                 </div>
-                </div>
-                <div class="row">
-                <div class="form-group col-4 ml-auto">
-                    <label>Select Energy Level</label>
+                <div class="form-group col-md-3 mr-auto">
+                    <strong>Select Energy Level</strong>
                     <select data-filter="energy_level" class="filter-energy_level filter form-control">
                         <option value="">Show All</option>
                         <option value="high">High</option>
@@ -92,8 +93,8 @@
                         <option value=low>Low</option>
                     </select>
                 </div>
-                <div class="form-group col-4 mr-auto">
-                    <label>Select Ease of Training</label>
+                <div class="form-group col-md-3 mr-auto">
+                    <strong>Select Ease of Training</strong>
                     <select data-filter="ease_of_training" class="filter-ease_of_training filter form-control">
                         <option value="">Show All</option>
                         <option value="easy">Easy</option>
@@ -103,10 +104,10 @@
                 </div>
               </div>
             </form>
-        </div>
+        </div><br><br><br><br><br>
     </div>
     <!-- Filter -->
-        
+  <hr>      
 <br>
 <br>
     <!-- Team -->

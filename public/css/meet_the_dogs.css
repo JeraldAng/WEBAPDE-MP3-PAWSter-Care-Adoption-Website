@@ -169,3 +169,13 @@ section .section-title {
     outline: none;
 }
 
+#filter-row{
+    margin: 0 auto;
+}
+
+.filter-container{
+    background-image: url("../img/filterdogs-cover.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
