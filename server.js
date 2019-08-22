@@ -561,5 +561,5 @@ app.post("/delete", urlencoder, (req, res)=>{
 })
 
 app.listen(process.env.PORT || 3000, function(){
-    console.log("now listening at port" + port + "!")
+    console.log("now listening at port")
 })
