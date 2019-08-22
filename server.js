@@ -18,7 +18,7 @@ const urlencoder = bodyparser.urlencoded({
 })
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb+srv://admin:1234@pawstercaredb-iykbj.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://admin:admin@cluster0-iykbj.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true
 })
 
