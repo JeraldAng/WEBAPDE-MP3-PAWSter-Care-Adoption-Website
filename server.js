@@ -36,6 +36,10 @@ app.get("/login", (req,res)=>{
     res.sendFile(__dirname + "/public/index.html")
 })
 
+app.get("/signup", (req, res)=>{
+    res.sendFile(__dirname + "/public/signup.html")
+})
+
 app.get("/error", (req,res)=>{
     res.sendFile(__dirname + "/public/error.html")
 })
@@ -556,4 +560,6 @@ app.post("/delete", urlencoder, (req, res)=>{
     })
 })
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000, function(){
+    console.log("now listening at port" + port + "!")
+})
