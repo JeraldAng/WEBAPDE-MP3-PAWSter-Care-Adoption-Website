@@ -25,7 +25,7 @@ $(document).ready(function(){
                                 alertify.set('notifier','position', 'bottom-left'); 
                                 alertify.success('Deleted Successfully');
                                  // remove the actual row
-                                 $("div[data-id='"+id+"']").remove()
+                                 $("span[data-id='"+id+"']").remove()
                              }
                              else
                                  alert("something went wrong")

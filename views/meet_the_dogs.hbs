@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -47,65 +46,68 @@
 <!-- Cards -->
 
     <div>
-    <div id="search" class="filter-category">
+    <div id="search" class="filter-category mt-2">
 		<form id="search-form" action="" method="POST" enctype="multipart/form-data">
-			<div class="form-group col-5">
+			<div class="form-group col-5 mx-auto">
 				<input class="form-control" type="text" placeholder="Search" />
 			</div>
-			<div class="form-group col-5">
+			<div class="form-group col-5 mx-auto">
 				<button type="submit" class="btn btn-block btn-primary">Search</button>
 			</div>
 		</form>
 	</div>
         
     <!-- Filter -->
-  <div class="filter-category" id="filter">
-		<form>
-			<div class="form-group col-3">
-                <label>Select Breed</label>
-				<select data-filter="breed" class="filter-breed filter form-control">
-					<option value="">Show All</option>
-                    <option value="Beagle">Beagle</option>
-                    <option value="Corgi">Corgi</option>
-                    <option value="Dachshund">Dachshund</option>
-                    <option value="Golden Retriever">Golden Retriever</option>
-                    <option value="Husky">Husky</option>
-                    <option value="Schnauzer">Schnauzer</option>
-
-				</select>
-			</div>
-			<div class="form-group col-3">
-                <label>Select Gender</label>
-				<select data-filter="gender" class="filter-gender filter form-control">
-					<option value="">Show All</option>
-					<option value="male">Male</option>
-					<option value="female">Female</option>
-				</select>
-			</div>
-			<div class="form-group col-3">
-                <label>Select Energy Level</label>
-				<select data-filter="energy_level" class="filter-energy_level filter form-control">
-					<option value="">Show All</option>
-					<option value="high">High</option>
-					<option value="moderate">Moderate</option>
-					<option value=low>Low</option>
-				</select>
-			</div>
-			<div class="form-group col-3">
-                <label>Select Ease of Training</label>
-				<select data-filter="ease_of_training" class="filter-ease_of_training filter form-control">
-					<option value="">Show All</option>
-					<option value="easy">Easy</option>
-					<option value="average">Average</option>
-					<option value="difficult">Difficult</option>
-				</select>
-			</div>
-		</form>
-	</div>
-  <!-- Filter -->
-        
+        <div class="filter-category mx-auto" id="filter">
+            <form>
+              <div class="row">
+                <div class="form-group col-4 ml-auto">
+                    <label>Select Breed</label>
+                    <select data-filter="breed" class="filter-breed filter form-control">
+                        <option value="">Show All</option>
+                        <option value="Beagle">Beagle</option>
+                        <option value="Corgi">Corgi</option>
+                        <option value="Dachshund">Dachshund</option>
+                        <option value="Golden Retriever">Golden Retriever</option>
+                        <option value="Husky">Husky</option>
+                        <option value="Schnauzer">Schnauzer</option>
+                    </select>
+                </div>
+                <div class="form-group col-4 mr-auto">
+                    <label>Select Gender</label>
+                    <select data-filter="gender" class="filter-gender filter form-control">
+                        <option value="">Show All</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-4 ml-auto">
+                    <label>Select Energy Level</label>
+                    <select data-filter="energy_level" class="filter-energy_level filter form-control">
+                        <option value="">Show All</option>
+                        <option value="high">High</option>
+                        <option value="moderate">Moderate</option>
+                        <option value=low>Low</option>
+                    </select>
+                </div>
+                <div class="form-group col-4 mr-auto">
+                    <label>Select Ease of Training</label>
+                    <select data-filter="ease_of_training" class="filter-ease_of_training filter form-control">
+                        <option value="">Show All</option>
+                        <option value="easy">Easy</option>
+                        <option value="average">Average</option>
+                        <option value="difficult">Difficult</option>
+                    </select>
+                </div>
+              </div>
+            </form>
+        </div>
     </div>
-
+    <!-- Filter -->
+        
+<br>
 <br>
     <!-- Team -->
 <section id="team" class="pb-5" style="margin-top: -6%;">
@@ -144,6 +146,10 @@
         </div>
     </div>
     </section>
+    <script>$(".filter-breed").val("{{selectbreed}}")
+            console.log({{selectbreed}})
+            $(".filter").change();
+    </script>
     
 {{> footer}}
     

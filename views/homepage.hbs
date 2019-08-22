@@ -68,23 +68,23 @@
 				<div class="w3ls_banner_txt mt-0"><br><br>
                     <h3 class="w3ls_pvt-title text-wh text-uppercase mt-0"><br>PAWSter Care</h3>
                     <p class="center-item">Providing you the best service. Adopt a pup today!</p><br>
-                    <form class="search-form col-md-9"> 
+                     <div class="search-form col-md-9"> 
                     <div class="form-group">
                         <h3 class="banner_title center-item">Which breed do you want to see?</h3><br>
-                        <select type="text" placeholder="Choose a breed.." class="form-control">
-                                      <option value="house">all breeds</option>
-                                      <option value="townhouse">Beagle</option>
-                                      <option value="condo">Corgi</option>
-                                      <option value="apartment">Dachshund</option>
-                                      <option value="duplex">Golden Retriever</option>
-                                      <option value="other">Husky</option>
-                                      <option value="other">Schnauzer</option>
+                        <select id="pref-breed" type="text" placeholder="Choose a breed.." class="form-control" name="prefBreed">
+                                      <option value="Show All">Show All</option>
+                                      <option value="Beagle">Beagle</option>
+                                      <option value="Corgi">Corgi</option>
+                                      <option value="Dachshund">Dachshund</option>
+                                      <option value="Golden Retriever">Golden Retriever</option>
+                                      <option value="Husky">Husky</option>
+                                      <option value="Schnauzer">Schnauzer</option>
                         </select>
                       </div><br>
                         <div>
-                            <button type="submit" class="btn button-style ml-3">Find one now!</button>
-                        </div>
-                    </form><br><br>
+                            <button class="filter-button btn button-style ml-3">Find one now!</button>
+                         </div></div>
+                    <br><br>
 				    <a href="#about" class="btn button-style mt-sm-4 mt-4">Read More</a>
                     <a href="#testimonials" class="btn button-style mt-sm-4 mt-4">Client Feedbacks</a>
                     </div>
@@ -175,6 +175,9 @@
     
 
 {{> footer}}
+    <form action = "filter" id = "filterform">                  <!-- just for the javascript function-->
+            <input type = "hidden" name="id" id= "filterid">
+        </form>
     </body>
 </html>
 

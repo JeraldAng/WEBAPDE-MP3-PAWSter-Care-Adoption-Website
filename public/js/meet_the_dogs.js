@@ -14,7 +14,8 @@ $(".filter-ease_of_training").append(ease_of_trainings);
 var filtersObject = {};
 
 //on filter change
-$(".filter").on("change",function() {
+$(".filter").on("change",function () {
+    console.log("change")
 	var filterName = $(this).data("filter"),
 		filterVal = $(this).val();
 	
@@ -61,4 +62,33 @@ $("#search-form").submit(function(e) {
 	});
 });
 
-//# sourceURL=pen.js
+$(document).ready(function() {
+    
+	var filterName = $(".filter").data("filter"),
+		filterVal = $(".filter").val();
+	
+	if (filterVal == "") {
+		delete filtersObject[filterName];
+	} else {
+		filtersObject[filterName] = filterVal;
+	}
+	
+	var filters = "";
+	
+	for (var key in filtersObject) {if (window.CP.shouldStopExecution(2)){break;}
+	  	if (filtersObject.hasOwnProperty(key)) {
+			filters += "[data-"+key+"='"+filtersObject[key]+"']";
+	 	 }
+	}
+window.CP.exitedLoop(2);
+
+	
+	if (filters == "") {
+		$(".product").show();
+	} else {
+		$(".product").hide();
+		$(".product").hide().filter(filters).show();
+	}
+    console.log(filterVal)
+
+});

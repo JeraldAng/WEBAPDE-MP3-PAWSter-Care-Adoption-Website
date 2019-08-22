@@ -67,6 +67,7 @@ app.get("/dogs", (req, res)=>{
         })
     })
 
+
 app.get("/check", (req, res)=>{                // just find the user given the id
     console.log("GET /check_dog/" + req.query.id)
     
@@ -84,6 +85,24 @@ app.get("/check", (req, res)=>{                // just find the user given the i
         }
     })
 })
+
+app.get("/filter", (req, res)=>{
+    console.log(req.query.id)
+    Dog.find({
+        }, (err, doc)=>{
+            if(err){
+                res.send(err)
+            }
+            else{                                 
+                res.render("meet_the_dogs.hbs", {
+                    username: req.session.username,
+                    db: doc,
+                    selectbreed: req.query.id
+                })
+            }
+        })
+})
+
 app.get("/policies", (req, res)=>{
     res.render("policies.hbs", {
         username: req.session.username
@@ -92,12 +111,6 @@ app.get("/policies", (req, res)=>{
 
 app.get("/protocols", (req, res)=>{
     res.render("protocols.hbs", {
-        username: req.session.username
-    })
-})
-
-app.get("/requests", (req, res)=>{
-    res.render("requests.hbs", {
         username: req.session.username
     })
 })
@@ -120,21 +133,63 @@ app.get("/requestform", (req, res)=>{
     })
 })
 
-app.get("/request_dog", (req, res)=>{
-    console.log(req.query.id)
-    Dog.findOne({
-        _id: req.query.id                     
+app.get("/requests", (req, res)=>{
+    User.findOne({
+        username: req.session.username
     }, (err, doc)=>{
         if(err){
             res.send(err)
         }
-        else{   
-            res.render("requestform.hbs", {
-                username: req.session.username,        
-                dog: doc
+        else{
+            Request.find({
+                reqEmail: doc.email
+            }, (err, doc)=>{
+                if(err){
+                    res.send(err)
+                }
+                else{
+                      
+                    res.render("requests.hbs", {
+                        username: req.session.username,        
+                        des: doc.description,
+                        reqList: doc
+                    })
+                            
+                }
             })
+            
         }
     })
+       
+})
+
+app.get("/request_dog", (req, res)=>{
+    console.log(req.query.id)
+    
+    User.findOne({
+        username: req.session.username
+    }, (err, doc)=>{
+        if(err){
+            res.send(err)
+        }
+        else{
+                email = doc.email
+                Dog.findOne({
+                    _id: req.query.id                     
+                }, (err, doc)=>{
+                    if(err){
+                        res.send(err)
+                    }
+                    else{   
+                        res.render("requestform.hbs", {
+                            username: req.session.username,        
+                            dog: doc,
+                            email: email
+                        })
+                    }
+                })
+        }
+})
 })
 
 app.get("/faq", (req, res)=>{
@@ -331,7 +386,6 @@ app.post("/edit_profile", urlencoder, (req, res)=>{
 })
 
 app.post("/request", urlencoder, (req, res)=>{
-    console.log("request sent")
     var reqName = req.body.reqfirst + " " + req.body.reqmiddle + " " + req.body.reqlast
     var reqEmail = req.body.reqemail
     var reqDog = req.body.reqdog

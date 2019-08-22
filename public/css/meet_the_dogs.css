@@ -157,3 +157,15 @@ section .section-title {
     text-align: center;
 }
 
+.delete{
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.delete:hover, .delete:focus{
+     background-color: #d9534f;
+    border-color: #d9534f;
+    box-shadow: none;
+    outline: none;
+}
+
